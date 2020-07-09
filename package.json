@@ -1,0 +1,14 @@
+{
+  "name": "immaculate-conception",
+  "version": "1.0.0",
+  "description": "The theme code for immaculateconception.com",
+  "main": "index.js",
+  "repository": "git@github.com:HoganMcDonald/immaculate-conception.git",
+  "author": "Hogan McDonald <hogan.developer@gmail.com>",
+  "scripts": {
+    "theme:list": "theme get --list --vars=.env",
+    "theme:get": "theme get --env=development",
+    "dev": "yarn deploy && theme watch --env=development",
+    "deploy": "theme deploy --env=development && theme open --env=development"
+  }
+}
