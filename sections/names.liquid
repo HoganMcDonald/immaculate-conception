@@ -1,0 +1,62 @@
+<div data-section-id="{{ section.id }}" data-section-type="names-section" class="names-section">
+  <section class="content">
+    {% for block in section.blocks %}
+      <div class="name-section">
+        {% if block.settings.image %}
+          <img src="{{ block.settings.image | img_url: 'x300' }}" />
+        {% endif %}
+        <h3 class="name-title">{{ block.settings.title }}</h3>
+        <div class="name-story">{{ block.settings.description }}</div>
+      </div>
+    {% endfor %}
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Names",
+	"max_blocks": 100,
+  "blocks": [
+    {
+      "type": "name",
+      "name": "Name",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+       		"label": "Person's name"
+        },
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Picture - optional"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": "Person's Story"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.names-section {
+  margin: 3rem;
+}
+
+.name-section {
+  margin-bottom: 4rem;
+}
+
+.name-story > * {
+  color: #e1e1e1;
+}
+
+.name-title {
+  color: #e1e1e1;
+  font-weight: 300;
+}
+{% endstylesheet %}
