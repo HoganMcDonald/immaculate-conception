@@ -5,6 +5,12 @@
         <h1>{{ page.title }}</h1>
       </div>
 
+      {% if page.content.size > 0 %}
+        <div class="rte page_content">
+          {{ page.content }}
+        </div>
+      {% endif %}
+
       <div class="rte">
         {% section 'names' %}
       </div>
@@ -16,5 +22,15 @@
 #PageContainer {
   background-color: #1e1e1e;
   color: #e1e1e1
+}
+
+.rte, .page_content {
+  color: #e1e1e1;
+}
+
+@media (min-width:801px) {
+  .rte, .page_content {
+    margin: 3rem;
+  }
 }
 </style>
